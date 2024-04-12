@@ -1,0 +1,179 @@
+/* You can add global styles to this file, and also import other style files */
+eoui-select {
+  &.eoui-select {
+    display: inline-block;
+    font-size: 12px;
+    min-width: 30px;
+    width: 100%;
+    color: var(--MAIN_TEXT);
+    .eoui-select-top-control {
+      position: relative;
+      width: 100%;
+      height: 30px;
+      padding: 0 5px;
+      line-height: 28px;
+      border: 1px solid transparent;
+      background: var(--MAIN_BG);
+      border-radius: 3px;
+      overflow: hidden;
+      box-sizing: border-box;
+      display: flex;
+      cursor: pointer;
+      &:hover {
+        border-color: var(--GREEN_LIGHT);
+      }
+      .eoui-select-arrow,
+      .eoui-select-close {
+        position: absolute;
+        right: 5px;
+        top: 0;
+        font-size: 12px;
+      }
+
+      .eoui-select-item-wrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 20px;
+        .eoui-select-placeholder {
+          color: #999;
+        }
+      }
+    }
+
+    .eoui-select-bg-input {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      box-sizing: border-box;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .eoui-select-empty-tips {
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      color: #999;
+    }
+  }
+  &.eoio-select-open {
+    .eoui-select-top-control {
+      border-color: var(--GREEN_DEEP);
+    }
+  }
+  &.eoui-select-disabled {
+    .eoui-select-top-control {
+      color: var(--DISABLE_TEXT);
+      background-color: var(--DISABLE_BG);
+      cursor: not-allowed;
+    }
+  }
+}
+
+.eoui-option-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  position: fixed;
+  width: max-content;
+  max-height: 215px;
+  margin-top: 2px;
+  border: 1px solid var(--BORDER);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 11;
+  background: var(--MAIN_BG);
+  color: var(--MAIN_TEXT);
+  .eoui-select-search {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--BORDER);
+    background-color: var(--INPUT_BG);
+
+    .eoui-select-search-input {
+      // 这里避免input宽度被font-size影响而导致flex:1不起作用设置宽度为0即可
+      width: 0;
+      font-size: 12px;
+      flex: 1;
+      height: 40px;
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+      background: transparent;
+    }
+
+    .eoui-select-search-icon {
+      padding-right: 5px;
+      font-size: 16px;
+    }
+  }
+
+  .eoui-option-scroll {
+    flex: 1;
+    overflow-y: auto;
+  }
+  .eoui-option-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    border-bottom: 1px solid var(--BORDER);
+    box-sizing: border-box;
+    &:hover {
+      background-color: var(--HOVER_BG);
+    }
+
+    &.eoui-option-item-active {
+      background-color: var(--HOVER_BG);
+    }
+    .eoui-option-label {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .eoui-select-checkbox-wrap {
+    display: flex;
+    align-items: center;
+    width: 27px;
+    height: 100%;
+    border-right: 1px solid var(--BORDER);
+    margin-right: 10px;
+  }
+  .eoui-select-checkbox {
+    font-size: 14px;
+    border: 1px solid var(--BORDER);
+    height: 15px;
+    width: 15px;
+    min-width: 15px;
+    line-height: 15px;
+    border-radius: 3px;
+    margin-right: 10px;
+    text-align: center;
+    color: #046d53;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c2c2c2;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f2f2f2;
+  }
+}

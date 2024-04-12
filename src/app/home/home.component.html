@@ -1,0 +1,93 @@
+<h3>所有功能-单选-可搜索-可清除</h3>
+<eoui-select
+  [(ngModel)]="value"
+  [eoOptions]="options1"
+  [eoAllowClear]="true"
+  [eoOptionConfig]="{ labelKey: 'label', valueKey: 'value' }"
+  style="width: 300px; margin-left: 550px"
+  [eoOptionContainerWidth]="500"
+  (ngModelChange)="handleModelChange($event)"
+  (eoOpenChange)="handleOpenChange($event)"
+></eoui-select>
+<h3>所有功能-多选-虚拟滚动-可搜索-可清除</h3>
+<eoui-select
+  [(ngModel)]="activedValue1"
+  eoMode="multiple"
+  [eoOptions]="options"
+  [eoShowSearch]="true"
+  [eoAllowClear]="true"
+  (ngModelChange)="handleModelChange($event)"
+  (eoOpenChange)="handleOpenChange($event)"
+  style="width: 300px"
+></eoui-select>
+
+<h3>所有功能-自定义下拉项内容</h3>
+<eoui-select
+  [(ngModel)]="activedValue1"
+  eoMode="multiple"
+  [eoAllowClear]="true"
+  (ngModelChange)="handleModelChange($event)"
+  (eoOpenChange)="handleOpenChange($event)"
+  style="width: 300px"
+>
+  <eoui-option eoLabel="苹果" eoValue="apple"></eoui-option>
+  <eoui-option eoLabel="香蕉" eoValue="bananer"></eoui-option>
+  <eoui-option eoLabel="梨子" eoValue="pear"></eoui-option>
+  <eoui-option eoLabel="橘子" eoValue="orange" [eoCustomContent]="true">
+    <div style="color: red">word</div>
+  </eoui-option>
+</eoui-select>
+
+<h3>动态数据</h3>
+<eoui-select
+  [ngModel]="['2']"
+  eoMode="multiple"
+  [eoAllowClear]="true"
+  (ngModelChange)="handleModelChange($event)"
+  (eoOpenChange)="handleOpenChange($event)"
+  style="width: 300px"
+>
+  <eoui-option *ngFor="let item of dynamicOptions" [eoLabel]="item.label" [eoValue]="item.value"></eoui-option>
+</eoui-select>
+
+<h3>基本使用</h3>
+<eoui-select [(ngModel)]="activedValue0" [eoOptions]="options"></eoui-select>
+<h3>带搜索框</h3>
+<eoui-select [(ngModel)]="activedValue1" [eoOptions]="options" [eoShowSearch]="true" style="width: 150px"></eoui-select>
+<h3>多选</h3>
+<eoui-select
+  [(ngModel)]="activedValue2"
+  [eoOptions]="options"
+  [eoAllowClear]="true"
+  [eoOptionContainerWidth]="150"
+  style="width: 300px"
+  eoMode="multiple"
+></eoui-select>
+<h3>多选不展示复选框</h3>
+<eoui-select
+  [(ngModel)]="activedValue3"
+  [eoOptions]="options"
+  [eoAllowClear]="true"
+  [eoOptionContainerWidth]="150"
+  [eoShowCheckBox]="false"
+  style="width: 300px"
+  eoMode="multiple"
+></eoui-select>
+<h3>可清除</h3>
+<eoui-select
+  [(ngModel)]="activedValue4"
+  [eoOptions]="options"
+  [eoAllowClear]="true"
+  eoMode="multiple"
+  style="width: 200px"
+>
+</eoui-select>
+
+<h3>可禁用</h3>
+<eoui-select
+  [(ngModel)]="activedValue5"
+  [eoOptions]="options"
+  eoMode="multiple"
+  style="width: 200px"
+  [eoDisabled]="true"
+></eoui-select>
